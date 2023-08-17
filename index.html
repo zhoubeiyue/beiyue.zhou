@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周北跃&张慧林</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .anniversary {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>周北跃&张慧林</h1>
+    
+    <div class="container">
+        <div class="anniversary">
+            <h2>恋爱</h2>
+            <div class="countdown" id="countdown1"></div>
+            <img src="anniversary_photo1.jpg" alt="恋爱照片">
+        </div>
+
+        <div class="anniversary">
+            <h2>周北跃生日</h2>
+            <div class="countdown" id="countdown2"></div>
+            <img src="anniversary_photo2.jpg" alt="周北跃生日照片">
+        </div>
+
+        <div class="anniversary">
+            <h2>张慧林生日</h2>
+            <div class="countdown" id="countdown3"></div>
+            <img src="anniversary_photo3.jpg" alt="张慧林生日照片">
+        </div>
+
+        <!-- 添加不需要计时和说明的照片 -->
+        <div class="anniversary">
+            <img src="photo4.jpg" alt="照片4">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo5.jpg" alt="照片5">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo6.jpg" alt="照片6">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo7.jpg" alt="照片7">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo8.jpg" alt="照片8">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo9.jpg" alt="照片9">
+        </div>
+
+        <div class="anniversary">
+            <img src="photo10.jpg" alt="照片10">
+        </div>
+    </div>
+    
+    <script>
+        function calculateDaysRemaining(targetDateString, countdownId) {
+            const targetDate = new Date(targetDateString);
+            const today = new Date();
+            
+            if (targetDate < today) {
+                targetDate.setFullYear(today.getFullYear() + 1);
+            }
+            
+            const timeDifference = targetDate - today;
+            const daysRemaining = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hoursRemaining = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            const countdownElement = document.getElementById(countdownId);
+            countdownElement.textContent = `距离目标日期还有 ${daysRemaining} 天 ${hoursRemaining} 小时`;
+        }
+
+        calculateDaysRemaining("2023-07-23", "countdown1");
+        calculateDaysRemaining("2023-09-18", "countdown2");
+        calculateDaysRemaining("2023-05-02", "countdown3");
+    </script>
+</body>
+</html>
